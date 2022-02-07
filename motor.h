@@ -12,12 +12,32 @@ class Motor {
     pin1 = pin;
     pin2 = pin + 1;
     speedpin = pin + 2;
+
+    pinMode(pin1, OUTPUT);
+    pinMode(pin2, OUTPUT);
+    pinMode(speedpin, OUTPUT);
   }
 
-  void forward(char speed) {
+  void forward(short speed) {
+    Serial.println(pin1);
+    Serial.println(pin2);
+    Serial.println(speedpin);
+    Serial.println(speed);
     digitalWrite(pin1, HIGH);
     digitalWrite(pin2, LOW);
     analogWrite(speedpin, speed);
+  }
+
+  void backward(short speed) {
+    digitalWrite(pin1, LOW);
+    digitalWrite(pin2, HIGH);
+    analogWrite(speedpin, speed);
+  }
+
+  void stop() {
+    digitalWrite(pin1, LOW);
+    digitalWrite(pin2, LOW);
+    analogWrite(speedpin, LOW);
   }
 };
 
