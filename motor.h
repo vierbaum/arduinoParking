@@ -7,6 +7,7 @@ class Motor {
     short pin1;
     short pin2;
     short speedpin;
+    float offset;
 
   void init(short pin) {
     pin1 = pin;
@@ -19,19 +20,15 @@ class Motor {
   }
 
   void forward(short speed) {
-    Serial.println(pin1);
-    Serial.println(pin2);
-    Serial.println(speedpin);
-    Serial.println(speed);
     digitalWrite(pin1, HIGH);
     digitalWrite(pin2, LOW);
-    analogWrite(speedpin, speed);
+    analogWrite(speedpin, (int)(255 * ((float)speed / 100) * offset));
   }
 
   void backward(short speed) {
     digitalWrite(pin1, LOW);
     digitalWrite(pin2, HIGH);
-    analogWrite(speedpin, speed);
+    analogWrite(speedpin, (int)(255 * ((float)speed / 100) * offset));
   }
 
   void stop() {

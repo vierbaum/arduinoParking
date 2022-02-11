@@ -17,19 +17,16 @@ class Sensor {
     }
 
   double read () {
-    double duration;
-    double distance;
     digitalWrite(trigger, LOW);
     delay(5);
     digitalWrite(trigger, HIGH);
     delay(10);
     digitalWrite(trigger, LOW);
-    duration = pulseIn(echo, HIGH);
-    distance = (duration / 2) * MAGICNUMBER;
+    double duration = pulseIn(echo, HIGH);
+    double distance = (duration / 2) * MAGICNUMBER;
     delay(300);
     return distance;
   }
-
 };
 
 #endif // SENSOR_H_

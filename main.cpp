@@ -10,8 +10,13 @@ int mainfun() {
 
   Motor m1;
   m1.init(5);
-  //while(true)
-  //  m1.forward(200);
+  m1.offset = 1;
+  while(true)
+    for(short i = 25; i <= 100; i++){
+      m1.forward(i);
+      delay(500);
+
+    }
 
   Sensor s1;
   s1.init(2);
