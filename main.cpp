@@ -1,13 +1,12 @@
 #include "main.h"
 #include "motor.h"
 #include "sensor.h"
+#include "gprintf.h"
 
-using namespace std;
 
 int mainfun() {
   Serial.begin(9600);
-  Serial.println("Test");
-
+  gprintf("Hello %\n", "world");
   Motor m1;
   m1.init(5);
   m1.offset = 1;
