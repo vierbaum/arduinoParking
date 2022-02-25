@@ -13,9 +13,11 @@ class Send {
   void Think(int iSendNum) {
     //binary
     int a=iSendNum;
+    // basic char-pointer-array
     char* binary = (char*)malloc(17);
     binary[17] = 0;
     int mask = 1;
+    // looping through array
     for(int i = 16; i != 0; i--) {
     if((mask&a) >= 1)
         binary[i] = '1';

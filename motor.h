@@ -20,6 +20,7 @@ class Motor {
     pinMode(speedpin, OUTPUT);
   }
 
+  // functions to set motor-rotation
   void forward(short speed) {
     digitalWrite(pin1, HIGH);
     digitalWrite(pin2, LOW);
@@ -33,6 +34,7 @@ class Motor {
     analogWrite(speedpin, (int)(255 * ((float)speed / 100) * offset));
   }
 
+  // stop motor
   void stop() {
     digitalWrite(pin1, LOW);
     digitalWrite(pin2, LOW);
