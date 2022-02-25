@@ -10,7 +10,8 @@ class Receive {
 
     digitalWrite(OUT_FIN, LOW);
   }
-  
+
+  // trivial
   int Think() {
      char* pInp = malloc(17); // major runtime optimization!!!!!!!
      pInp[17] = 0;

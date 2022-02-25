@@ -9,6 +9,7 @@ class Sensor {
     short echo;
 
     void init(short pin) {
+      // set pins
       echo = pin;
       trigger = pin + 1;
 
@@ -16,12 +17,14 @@ class Sensor {
       pinMode(echo, INPUT);
     }
 
+  // brendom moment
   double read () {
     digitalWrite(trigger, LOW);
     delay(5);
     digitalWrite(trigger, HIGH);
     delay(10);
     digitalWrite(trigger, LOW);
+    // calculating distance
     double duration = pulseIn(echo, HIGH);
     double distance = (duration / 2) * MAGICNUMBER;
     delay(300);

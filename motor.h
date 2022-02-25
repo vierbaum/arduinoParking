@@ -10,6 +10,7 @@ class Motor {
     float offset;
 
   void init(short pin) {
+    // set pins
     pin1 = pin;
     pin2 = pin + 1;
     speedpin = pin + 2;
@@ -22,6 +23,7 @@ class Motor {
   void forward(short speed) {
     digitalWrite(pin1, HIGH);
     digitalWrite(pin2, LOW);
+    // convert % to abs
     analogWrite(speedpin, (int)(255 * ((float)speed / 100) * offset));
   }
 

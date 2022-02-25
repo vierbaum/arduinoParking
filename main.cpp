@@ -6,7 +6,11 @@
 
 int mainfun() {
   Serial.begin(9600);
+
+  // testing gprintf
   gprintf("Hello %\n", "world");
+
+  // testing motor
   Motor m1;
   m1.init(5);
   m1.offset = 1;
@@ -17,6 +21,7 @@ int mainfun() {
 
     }
 
+  // testing sensor
   Sensor s1;
   s1.init(2);
   while(true)
