@@ -5,6 +5,9 @@
 int nodePayload[NODE_MAX_NUMBER][PAYLOAD_SIZE];
 
 #include "Arduino.h"
+
+short cD;
+
 void Transmit(int receiver, byte data) {
     Wire.beginTransmission(receiver);
     Wire.write(data);
@@ -32,7 +35,5 @@ void requestEvent() {
 }
 
 void receiveEvent(int bytes) {
-  int x = 0;
-  x = Wire.read();
-  Serial.println(x);
+  cD = Wire.read();
 }

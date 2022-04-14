@@ -7,7 +7,7 @@ class Motor {
     short pin1;
     short pin2;
     short speedpin;
-    float offset;
+    float offset = 1;
 
   void init(short pin) {
     // set pins

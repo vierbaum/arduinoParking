@@ -27,7 +27,6 @@ class Sensor {
     // calculating distance
     double duration = pulseIn(echo, HIGH);
     double distance = (duration / 2) * MAGICNUMBER;
-    delay(300);
     return distance;
   }
 };
